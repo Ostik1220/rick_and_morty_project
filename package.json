@@ -1,0 +1,22 @@
+{
+  "name": "rick_and_morty_project",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Ostik1220/rick_and_morty_project",
+  "scripts": {
+    "start": "npx parcel src/index.html",
+    "build": "parcel build src/index.html --no-cache --public-url /rick_and_morty_project",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.15.4",
+    "parcel-reporter-clean-dist": "^1.0.4"
+  },
+  "dependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
