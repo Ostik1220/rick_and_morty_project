@@ -4,8 +4,9 @@
   "description": "",
   "homepage": "https://github.com/Ostik1220/rick_and_morty_project",
   "scripts": {
+    "preparcel": "posthtml src/index.html -o dist/index.html",
     "start": "npx parcel src/index.html",
-    "build": "parcel build src/index.html --no-cache --public-url /rick_and_morty_project",
+    "build": "npm run preparcel && parcel build dist/index.html --no-cache --public-url /rick_and_morty_project",
     "deploy": "gh-pages -d dist",
     "predeploy": "npm run build"
   },
@@ -14,7 +15,10 @@
   "license": "ISC",
   "devDependencies": {
     "parcel": "^2.15.4",
-    "parcel-reporter-clean-dist": "^1.0.4"
+    "parcel-reporter-clean-dist": "^1.0.4",
+    "posthtml": "^0.16.6",
+    "posthtml-cli": "^0.10.0",
+    "posthtml-include": "^2.0.1"
   },
   "dependencies": {
     "gh-pages": "^6.3.0"
