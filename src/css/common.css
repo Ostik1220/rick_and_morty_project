@@ -1,0 +1,20 @@
+.container {
+  max-width: 343px;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  @media screen and (min-width: 768px) {
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 704px;
+  }
+  @media screen and (min-width: 1200px) {
+    max-width: 1184px;
+  }
+}
+
+html {
+  box-sizing: border-box;
+  font-family: "Montserrat";
+  background-color: #FAFAFA;
+}
