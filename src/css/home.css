@@ -44,6 +44,8 @@
 
 
 .about {
+    margin-left: auto;
+    margin-right: auto;
     margin-top: -61px;
     width: 1408px;
     height: 173px;
@@ -155,19 +157,39 @@
     height: 1px;
 }
 
+.ready {
+    padding-top: 100px;
+    margin-top: 128px;
+    border-radius: 100px;
+    background: #0D171D;
+    width: 100%;
+    height: 744px;
+}
+
 .ready__title {
     color: #FAFAFA;
-font-family: Montserrat;
-font-size: 44px;
-font-style: normal;
-font-weight: 600;
-line-height: 48px; /* 109.091% */
+    font-family: Montserrat;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 48px;
+    /* 109.091% */
+    width: 610px;
 }
 
 .ready__span {
     border-radius: 44px;
-background: #A1D737;
-width: 184px;
-height: 56px;
-flex-shrink: 0;
+    background: #A1D737;
+    width: 184px;
+    height: 56px;
+    flex-shrink: 0;
+}
+
+.ready__image {
+    width: 278px;
+    height: 314px;
+    flex-shrink: 0;
+    border-radius: 18px;
+    border: 3px solid #A1D737;
+    background: #0D171D;
 }
