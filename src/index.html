@@ -19,24 +19,34 @@
 </head>
 
 <body>
-  <include src="./partials/header.html"></include>
+  <!-- <include src="./partials/header.html"></include> -->
+   <header>
+    <div class="container header__container">
+    <a href="./characters.html" class="header__link" type="button">Characters</a>
+    <a href="./episodes.html" class="header__a" type="button">Episodes</a>
+    <button href="" class="header__btn" type="button">Search</button>
+    </div>
+   </header>
   <main>
     <section class="hero">
       <div class="container hero__container">
-        <p class="hero__text">If you're a fan of Rick and Morty, you don't want to miss out on our app! Start exploring
-          the endless possibilities of Rick and Morty!</p>
         <img class="hero__image" src="../src/img/hero-home.png" alt="">
         <img class="hero__logo" src="../src/img/logo.png" alt="">
+        <p class="hero__text">If you're a fan of Rick and Morty, you don't want to miss out on our app! Start exploring
+          the endless possibilities of Rick and Morty!</p>
       </div>
     </section>
     <section class="about">
-
+      <img class="about__box" src="../src/img/tags-about-us.png" alt="">
     </section>
+    
     <section class="main">
       <div class="container main__container">
         <h2 class="main__title"><span class="main__span">Main</span> characters</h2>
         <div class="main__box">
+          <div class="main__img">
           <img class="main__character" src="./img/Rick.png" alt="Character 1">
+          </div>
           <ul class="main__list">
             <li class="main__item">
               <button class="main__name active">Rick Sanchez</button>
@@ -83,6 +93,7 @@
           <img class="ready__image" src="./img/explore-4.png" alt="">
           <img class="ready__image" src="./img/explore-5.png" alt="">
         </div>
+        <a class="ready__link" href="./episodes.html">Episodes</a>
       </div>
     </section>
   </main>
