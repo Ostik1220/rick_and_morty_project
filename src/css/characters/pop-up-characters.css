@@ -1,0 +1,36 @@
+.popup-container {
+  background-color: #0d171d;
+  width: 702;
+  height: 510;
+  border-radius: 18px;
+  opacity: 1;
+}
+.grey-text {
+  color: #fafafa80;
+}
+.white-text {
+  color: #fafafa;
+}
+.pop-up-form {
+  outline: solid #a1d737 2px;
+  border-radius: 18px;
+}
+.pop-up-div {
+    margin-top: 20px;
+    outline: solid #a1d737 2px;
+}
+.pop-up-name {
+    color: #A1D737;
+}
+.pop-up-seasone {
+  color: #fafafa80;
+}
+.seasone-white {
+  color: #fafafa;
+}
+.pop-up-date {
+  color: #fafafa80;
+}
+.date-white {
+  color: #fafafa;
+}
