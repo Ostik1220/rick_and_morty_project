@@ -1,19 +1,26 @@
 .footer{
-    margin-top: 64px;
     padding-top: 69px;
 
 }
 
 .footer__container{
     display: flex;
-    gap: 309px;
+justify-content: space-around;
+row-gap: 20px;
     height: 107px;
     align-items: center;
+    flex-wrap: wrap;
+    @media screen and (min-width: 768px) {
+    justify-content: space-between;
+    }
 }
 
 .footer__logo{
-width: 225px;
+width: 149px;
     flex-shrink: 0;
+      @media screen and (min-width: 768px) {
+width: 225px;
+      }
 }
 
 .footer__list-pages{
@@ -63,6 +70,10 @@ font-weight: 400;
 line-height: 18px; /* 128.571% */
 margin-top: 128px;
 padding-bottom: 16px;
+}
+
+.footer__info-section{
+    display: flex;
 }
 
 #night {
