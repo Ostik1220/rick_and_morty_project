@@ -1,3 +1,7 @@
+body {
+    overflow-x: hidden;
+}
+
 header {
     position: absolute;
     top: 24px;
@@ -294,21 +298,19 @@ header {
     }
 }
 
-.main__img {
-    display: flex;
+.main__character {
+    display: none;
     width: 335px;
     padding: 16px 10px 11px 10px;
     justify-content: center;
     align-items: center;
     border-radius: 25px;
-    background: #A1D737;
     margin-top: 40px;
     margin-bottom: 32px;
 
     @media screen and (min-width: 768px) {
         margin-top: 72px;
         border-radius: 100px;
-        background: #A1D737;
         width: 704px;
         height: 704px;
     }
@@ -319,14 +321,8 @@ header {
     }
 }
 
-.main__character {
-    height: 308px;
-
-    @media screen and (min-width: 768px) {
-        width: 504px;
-        height: 644px;
-    }
-
+.activ {
+    display: flex;
 }
 
 
@@ -353,8 +349,9 @@ header {
     font-weight: 600;
     line-height: 24px;
     background-color: transparent;
-        border: none;
-                margin-bottom: 14px;
+    border: none;
+    margin-bottom: 14px;
+
     /* 133.333% */
     @media screen and (min-width: 768px) {
         background-color: transparent;
@@ -436,31 +433,34 @@ header {
     border-radius: 100px;
     background: #0D171D;
     width: 100%;
- height: 566px;
-        @media screen and (min-width: 768px) {
-    margin-top: 128px;
-       height: 744px;
-  }
+    height: 566px;
+
+    @media screen and (min-width: 768px) {
+        margin-top: 128px;
+        height: 744px;
+    }
 }
 
 .ready__title {
-color: #FAFAFA;
-font-family: Montserrat;
-font-size: 28px;
-font-style: normal;
-font-weight: 600;
-line-height: 32px; /* 114.286% */
-width: 306px;
-        @media screen and (min-width: 768px) {
     color: #FAFAFA;
     font-family: Montserrat;
-    font-size: 44px;
+    font-size: 28px;
     font-style: normal;
     font-weight: 600;
-    line-height: 48px;
-    /* 109.091% */
-    width: 610px;
-  }
+    line-height: 32px;
+    /* 114.286% */
+    width: 306px;
+
+    @media screen and (min-width: 768px) {
+        color: #FAFAFA;
+        font-family: Montserrat;
+        font-size: 44px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 48px;
+        /* 109.091% */
+        width: 610px;
+    }
 }
 
 .ready__span {
@@ -475,8 +475,7 @@ width: 306px;
     margin-top: 63px;
     display: flex;
     gap: 24px;
-    overflow: hidden;
-
+    position: absolute;
 }
 
 .ready__image {
@@ -486,42 +485,61 @@ width: 306px;
     border-radius: 18px;
     border: 3px solid #A1D737;
     background: #0D171D;
-        @media screen and (min-width: 768px) {
-    width: 278px;
-    height: 314px;
-  }
+
+    @media screen and (min-width: 768px) {
+        width: 278px;
+        height: 314px;
+    }
+}
+
+.ready__images {
+    width: 200px;
+    height: 220px;
+    flex-shrink: 0;
+    border-radius: 18px;
+    border: 3px solid #A1D737;
+    background: #0D171D;
+    object-fit: cover;
+
+    @media screen and (min-width: 768px) {
+        width: 278px;
+        height: 314px;
+    }
 }
 
 .ready__link {
- color: #0D171D;
-font-family: Montserrat;
-font-size: 12px;
-font-style: normal;
-font-weight: 600;
-line-height: 16px; /* 133.333% */
-display: inline-flex;
-padding: 10px 20px;
-align-items: flex-start;
-gap: 10px;
-border-radius: 1000px;
-background: #A1D737;
-    margin-left: 239px;
-    margin-top: 20px;
-        @media screen and (min-width: 768px) {
-   width: 78px;
-    display: flex;
-    padding: 12px 24px;
+    color: #0D171D;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 16px;
+    /* 133.333% */
+    display: inline-flex;
+    padding: 10px 20px;
     align-items: flex-start;
     gap: 10px;
     border-radius: 1000px;
     background: #A1D737;
-    color: #0D171D;
-    font-family: Montserrat;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 18px;
-    /* 128.571% */
-    margin-top: 32px;
-  }
+    margin-left: 239px;
+    margin-top: 20px;
+
+    @media screen and (min-width: 768px) {
+        margin-top: 410px;
+        width: 78px;
+        display: flex;
+        padding: 12px 24px;
+        align-items: flex-start;
+        gap: 10px;
+        border-radius: 1000px;
+        background: #A1D737;
+        color: #0D171D;
+        font-family: Montserrat;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 18px;
+        /* 128.571% */
+        margin-left: auto;
+    }
 }
