@@ -16,4 +16,5 @@ html {
   box-sizing: border-box;
   font-family: "Montserrat";
   background-color: #FAFAFA;
+  scroll-behavior: smooth;
 }
