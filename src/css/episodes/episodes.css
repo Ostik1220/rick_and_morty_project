@@ -5,10 +5,11 @@
     display: flex;
     gap: 118px;
     justify-content: center;
-    padding-top: 100px;
+    padding-top: 173px;
     padding-bottom: 100px;
     border-bottom-left-radius: 45px;
     border-bottom-right-radius: 45px;
+
 }
 
 .hero-title {
@@ -53,10 +54,16 @@ border: 1px solid rgba(250, 250, 250, 0.30);
     height: auto;
 }
 
+/* tags */
+
+.tags {
+  margin-top: -69px;
+}
+
  /* episodes */
 
 .episodes {
-  padding-top: 176px;
+  padding-top: 81px;
   padding-bottom: 128px;
 }
 
@@ -96,4 +103,26 @@ font-size: 16px;
 font-style: normal;
 font-weight: 400;
 line-height: 18px; /* 112.5% */
+}
+
+.episodes-minicontainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 64px;
+}
+
+.episodes-button {
+  display: inline-flex;
+padding: 12px 24px;
+align-items: flex-start;
+gap: 10px;
+border-radius: 1000px;
+background: #A1D737;
+color: #0D171D;
+font-family: Montserrat;
+border: none;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 18px; /* 128.571% */
 }
