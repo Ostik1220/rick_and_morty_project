@@ -1,11 +1,14 @@
 header {
-  position: absolute;
-  top: 24px;
+  position: sticky;
   width: 100%;
+  top: 0;
+  z-index: 10;
+  background-color: #0d171d;
 }
 
 .header__container {
   display: flex;
+  
 }
 
 .header__link {
