@@ -2,10 +2,21 @@ document.querySelector(".main__list").addEventListener("click", (e) => {
   if (e.target.classList.contains("main__name")) {
     document.querySelectorAll(".main__name").forEach(name => name.classList.remove("active"));
     e.target.classList.add("active");
-    document.querySelectorAll(".main__character").forEach(character => character.classList.remove("activ"));
-    document.querySelector(`.main__character[src*="${e.target.textContent.split(" ")[0]}"]`).classList.add("activ");
+
+    document.querySelectorAll(".main__character").forEach(character => {
+      character.classList.remove("activ");
+      character.classList.add("hidden");
+    });
+
+    const newChar = document.querySelector(`.main__character[src*="${e.target.textContent.split(" ")[0]}"]`);
+    newChar.classList.remove("hidden");
+
+    requestAnimationFrame(() => {
+      newChar.classList.add("activ");
+    });
   }
 });
+
 
 const box = document.querySelector('.ready__box');
 if (box) {

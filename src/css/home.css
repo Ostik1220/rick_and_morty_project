@@ -182,7 +182,8 @@ body {
 }
 
 .main__character {
-    display: none;
+  transform: translateY(100%);
+  transition: transform 0.5s ease;
     width: 335px;
     padding: 16px 10px 11px 10px;
     justify-content: center;
@@ -204,8 +205,12 @@ body {
     }
 }
 
+.hidden {
+  display: none;
+}
+
 .activ {
-    display: flex;
+  transform: translateY(0);
 }
 
 
