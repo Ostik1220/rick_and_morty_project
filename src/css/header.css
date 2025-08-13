@@ -2,13 +2,39 @@ header {
   position: sticky;
   width: 100%;
   top: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
   z-index: 10;
   background-color: #0d171d;
 }
 
+.header__error{
+  position: absolute;
+  padding: 10px;
+  top: 100%;
+ left: 71%;
+ border-radius: 12px;
+ border: 1px solid #8c8c8c;
+ background-color: #0d171d;
+  color: #a1d737;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px;
+  text-align: center;
+
+}
+
 .header__container {
   display: flex;
-  
+  justify-content: space-between;
+}
+
+.header__btns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .header__link {
@@ -110,6 +136,15 @@ flex-shrink: 0;
     border-radius: 1000px;
     border: 1px solid rgba(250, 250, 250, 0.3);
   }
+}
+
+.header__search-btn{
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header__label {
