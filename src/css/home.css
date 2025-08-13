@@ -311,6 +311,7 @@ body {
 }
 
 .ready {
+    overflow: hidden;
     padding-top: 100px;
     margin-top: 80px;
     border-radius: 100px;
@@ -358,7 +359,7 @@ body {
     margin-top: 63px;
     display: flex;
     gap: 24px;
-    position: absolute;
+
 }
 
 .ready__image {
@@ -408,7 +409,7 @@ body {
     margin-top: 20px;
 
     @media screen and (min-width: 768px) {
-        margin-top: 410px;
+        margin-top: 32px;
         width: 78px;
         display: flex;
         padding: 12px 24px;
