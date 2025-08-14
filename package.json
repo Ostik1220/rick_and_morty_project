@@ -6,7 +6,7 @@
   "scripts": {
     "preparcel": "posthtml src/index.html -o dist/index.html",
     "start": "npx parcel src/index.html",
-    "build": "npm run preparcel && parcel build dist/index.html --no-cache --public-url /rick_and_morty_project",
+    "build": "parcel build src/*.html --no-cache --public-url /rick_and_morty_project",
     "deploy": "gh-pages -d dist",
     "predeploy": "npm run build"
   },
