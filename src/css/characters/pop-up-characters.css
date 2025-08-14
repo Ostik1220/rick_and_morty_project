@@ -1,206 +1,207 @@
 .backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
 
 .modal {
-    width: 335px;
-    background-color: #0D171D;
-    border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    display: flex;
-    padding: 40px 15px 20px;
-    gap: 25px;
-    flex-direction: column;
-    position: relative;
+  width: 335px;
+  background-color: #0d171d;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  padding: 40px 15px 20px;
+  gap: 25px;
+  flex-direction: column;
+  position: relative;
 }
 
 @media screen and (min-width: 768px) {
-    .modal {
-        width: 702px;
-        padding: 20px;
-        gap: 15px;
-        flex-direction: row;
-    }
+  .modal {
+    width: 702px;
+    padding: 20px;
+    gap: 15px;
+    flex-direction: row;
+  }
 }
 
 @media screen and (min-width: 1360px) {
-    .modal {
-        width: 710px;
-        padding: 20px;
-    }
+  .modal {
+    width: 710px;
+    padding: 20px;
+  }
 }
 
 .modal-character-div {
-    width: 295px;
+  width: 295px;
 }
 
 @media screen and (min-width: 768px) {
-    .modal-character-div {
-        width: 278px;
-    }
+  .modal-character-div {
+    width: 278px;
+  }
 }
 
 .modal-image {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .modal-image img {
-    border: 2px solid #A1D737;
-    border-radius: 15px;
-    width: 295px;
-    height: 292px;
-    margin-bottom: 10px;
-    object-fit: cover;
+  border: 2px solid #a1d737;
+  border-radius: 15px;
+  width: 295px;
+  height: 292px;
+  margin-bottom: 10px;
+  object-fit: cover;
 }
 
 @media screen and (min-width: 768px) {
-    .modal-image img {
-        width: 278px;
-        height: 292px;
-    }
+  .modal-image img {
+    width: 278px;
+    height: 292px;
+  }
 }
 
 .modal-info {
-    width: 295px;
-    padding: 25px 0 10px 34px;
-    border: 2px solid #A1D737;
-    border-radius: 15px;
+  width: 295px;
+  padding: 25px 0 10px 34px;
+  border: 2px solid #a1d737;
+  border-radius: 15px;
 }
 
 @media screen and (min-width: 768px) {
-    .modal-info {
-        padding-left: 20px;
-        padding-top: 25px;
-        width: 278px;
-    }
+  .modal-info {
+    padding-left: 20px;
+    padding-top: 25px;
+    width: 278px;
+  }
 }
 
 .modal-info-list {
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 15px;
-    row-gap: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 15px;
+  row-gap: 25px;
 }
 
 .modal-info-item {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .modal-info-text {
-    margin-bottom: 7px;
-    color: #FAFAFA;
-    opacity: 0.4;
-    font-size: 12px;
-    line-height: 14px;
-    font-weight: 400;
+  margin-bottom: 7px;
+  color: #fafafa;
+  opacity: 0.4;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 400;
 }
 
 .modal-info-info {
-    color: #FAFAFA;
-    font-size: 14px;
-    line-height: 18px;
-    font-weight: 400;
+  color: #fafafa;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
 }
 
 @media screen and (min-width: 768px) {
-    .modal-info-info {
-        font-size: 16px;
-    }
+  .modal-info-info {
+    font-size: 16px;
+  }
 }
 
 .modal-title {
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 24px;
-    margin-bottom: 20px;
-    color: #FAFAFA;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 20px;
+  color: #fafafa;
 }
 
 @media screen and (min-width: 768px) {
-    .modal-title {
-        font-size: 24px;
-        line-height: 28px;
-    }
+  .modal-title {
+    font-size: 24px;
+    line-height: 28px;
+  }
 }
 
 .modal-episodes-div {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  padding-left: 20px;
+  flex-direction: column;
 }
 
 .modal-episodes-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 295px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 295px;
 }
 
 @media screen and (min-width: 768px) {
-    .modal-episodes-list {
-        width: 352px;
-        gap: 10px;
-    }
+  .modal-episodes-list {
+    width: 352px;
+    gap: 10px;
+  }
 }
 
 .modal-episodes-item {
-    border: 2px solid #A1D737;
-    border-radius: 20px;
-    padding: 10px;
-    color: #FAFAFA;
+  border: 2px solid #a1d737;
+  border-radius: 20px;
+  padding: 10px;
+  color: #fafafa;
 }
 
 @media screen and (min-width: 768px) {
-    .modal-episodes-item {
-        padding: 12px;
-        width: 352px;
-    }
+  .modal-episodes-item {
+    padding: 12px;
+    width: 352px;
+  }
 }
 
 .modal-episode-title {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
 }
 
 .modal-episode-text {
-    font-size: 12px;
-    opacity: 0.5;
+  font-size: 12px;
+  opacity: 0.5;
 }
 
 .modal-episode-info {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .modal-episode-season,
 .modal-episode-airdate {
-    display: flex;
-    gap: 5px;
+  display: flex;
+  gap: 5px;
 }
 
 .modal-close {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    background-color: transparent;
-    border: none;
-    width: 20px;
-    height: 20px;
-    font-size: 20px;
-    color: #FAFAFA;
-    cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: transparent;
+  border: none;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  color: #fafafa;
+  cursor: pointer;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
