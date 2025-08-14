@@ -1,2 +1,0 @@
-const e=document.querySelector(".episodes-data");!async function(){try{let t=await fetch("https://rickandmortyapi.com/api/episode");(await t.json()).results.forEach(t=>{let a=document.createElement("div");a.classList.add("episode-item"),a.innerHTML=`<span>${t.name}</span> (${t.episode})`,e.appendChild(a)})}catch(e){console.error("Помилка завантаження")}}();
-//# sourceMappingURL=episodes.b5a81cfd.js.map
