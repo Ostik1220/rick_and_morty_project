@@ -1,4 +1,4 @@
-import { getCharacterList } from "./api-requests/getListsApi";
+import { renderEpisodes } from "./episodes-js/maine-episodes";
 
 getCharacterList(3).then(data => {
   console.log(data);
