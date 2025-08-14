@@ -1,4 +1,4 @@
-<section class="character">
+<section class="character"> 
   <div class="container">  
     <div class="character-filter-container">
 
@@ -12,7 +12,8 @@
 
       <div>
         <h2 class="character-title">Status</h2>
-        <select>
+        <select data-filter="status">
+          <option>All</option>
           <option>Alive</option>
           <option>Dead</option>
           <option>Unknown</option>
@@ -21,7 +22,8 @@
 
       <div>
         <h2 class="character-title">Species</h2>
-        <select>
+        <select data-filter="species">
+          <option>All</option>
           <option>Human</option>
           <option>Alien</option>
           <option>Mythological Creature</option>
@@ -35,7 +37,8 @@
 
       <div>
         <h2 class="character-title">Type</h2>
-        <select>
+        <select data-filter="type">
+          <option>All</option>
           <option>Parasite</option>
           <option>Human with ant...</option>
           <option>Superhuman</option>
@@ -47,7 +50,7 @@
 
       <div>
         <h2 class="character-title">Gender</h2>
-        <select>
+        <select data-filter="gender">
           <option>All</option>
           <option>Male</option>
           <option>Female</option>
@@ -58,7 +61,7 @@
 
     </div>
 
-    <ul id="character-list" class="character-list"></ul>
+    <ul class="character-list"></ul>
     <button type="button" class="character-load-more">Load more</button>
   </div>
 </section>
