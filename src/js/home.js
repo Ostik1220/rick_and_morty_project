@@ -39,3 +39,25 @@ if (box) {
 
   loop();
 }
+
+
+const aboutImages = document.querySelector('.about__box');
+if (aboutImages) {
+  let offset = 0;
+  const speed = 1; 
+
+  function loop() {
+    offset -= speed;
+    const firstImg = aboutImages.children[0];
+    const imgWidth = firstImg.offsetWidth;
+    if (Math.abs(offset) >= imgWidth) {
+      offset += imgWidth;
+      aboutImages.appendChild(firstImg);
+    }
+    aboutImages.style.transform = `translateX(${offset}px)`;
+    requestAnimationFrame(loop);
+  }
+
+  loop();
+}
+
