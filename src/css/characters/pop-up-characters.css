@@ -5,22 +5,47 @@
   border-radius: 18px;
   opacity: 1;
 }
+.pop-up-stat {
+  padding-top: 16px;
+  padding-left: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  outline: solid #a1d737 2px;
+  border-radius: 18px;
+  width: 278;
+  height: 146;
+  opacity: 1;
+  border-radius: 18px;
+  border-width: 2px;
+}
 .grey-text {
+  padding-left: 12px;
+  display: flex;
   color: #fafafa80;
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  flex-direction: column;
 }
 .white-text {
   color: #fafafa;
-}
-.pop-up-form {
-  outline: solid #a1d737 2px;
-  border-radius: 18px;
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0%;
+  vertical-align: middle;
 }
 .pop-up-div {
-    margin-top: 20px;
-    outline: solid #a1d737 2px;
+  margin-top: 20px;
+  outline: solid #a1d737 2px;
 }
 .pop-up-name {
-    color: #A1D737;
+  color: #a1d737;
 }
 .pop-up-seasone {
   color: #fafafa80;
