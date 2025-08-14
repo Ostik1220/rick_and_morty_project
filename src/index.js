@@ -1,6 +1,6 @@
 import './js/home.js';
 import './js/characters.js';
-import './episodes.js';
+import './js/char-modal.js';
 import './js/footer.js';
 import './js/header.js';
 import './js/pop-up.js';
