@@ -16,7 +16,6 @@ header {
   position: absolute;
   padding: 10px;
   top: 100%;
- left: 75%;
  border-radius: 12px;
  border: 1px solid #8c8c8c;
  background-color: #0d171d;
@@ -29,6 +28,13 @@ header {
   text-align: center;
 display: none;
   visibility: hidden;
+  @media screen and (min-width: 768px) {
+     left: 75%;
+  }
+}
+
+.charaer-namec{
+  
 }
 
 .header__close-icon{
