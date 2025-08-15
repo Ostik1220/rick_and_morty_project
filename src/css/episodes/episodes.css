@@ -5,13 +5,15 @@
   background: #0d171d;
   width: 673px;
   height: 370px;
+    position: relative;
   @media screen and (max-width: 800px) {
     width: 350px;
     height: 410px;
   }
 }
 
-.bacdrop {
+.backdrop {
+    background-color: rgba(0, 0, 0, 0.2);
     position: fixed;
     right: 0px;
     left: 0px;
@@ -21,6 +23,11 @@
     justify-content: center;
     align-items: center;
   }
+
+  .no-scroll {
+  overflow: hidden;
+  height: 100%;
+}
 
 .is-hidden {
     visibility: hidden;
@@ -42,6 +49,8 @@
   flex-shrink: 0;
   border-radius: 18px;
   border: 2px solid #a1d737;
+  display: flex;
+  margin-left: 17px;
   @media screen and (max-width: 800px) {
     width: 310px;
     height: 360px;
@@ -325,6 +334,10 @@ flex-shrink: 0;
   }
 }
 
+.episodes-input-container {
+  display: flex;
+}
+
 .episodes-search-input {
   display: flex;
   padding: 16px 24px;
@@ -340,9 +353,22 @@ flex-shrink: 0;
   font-style: normal;
   font-weight: 400;
   line-height: 18px; /* 112.5% */
+
   @media screen and (max-width: 800px) {
     padding: 14px 24px;
   }
+}
+
+.episodes-svg {
+  width: 18px;
+height: 18px;
+position: relative;
+right: 45px;
+top: 17px;
+}
+
+.episodes-select-container {
+  display: flex;
 }
 
 .episodes-search-mini {

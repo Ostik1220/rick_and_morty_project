@@ -7,6 +7,7 @@ let totalPages = 1;
 function getTotalPagesPerChunk(data) {
   return data.results.length;
 }
+
 async function loadEpisodes(page = 1) {
   try {
     const response = await fetch(
@@ -30,15 +31,15 @@ function renderEpisodes(episodes) {
       const seasonNumber = parseInt(ep.episode.slice(1, 3), 10);
       const episodeNumber = parseInt(ep.episode.slice(4, 6), 10);
       return `
-        <div  class="episode-card">
-        <div class="episode-minicontainer">
-          <h3 class="episodes-cardtitle">${ep.name}</h3>
-          <div class="episodes-cardcontainer">
-          <p class="episodes-textitle">Season: <span class="episodes-span">${seasonNumber}</span></p>
-          <p class="episodes-textitle">Air date: <span class="episodes-span">${ep.air_date}</span></p>
-        </div>
-        </div>
+        <div data-modal-open class="episode-card">
+          <div class="episode-minicontainer">
+            <h3 class="episodes-cardtitle">${ep.name}</h3>
+            <div class="episodes-cardcontainer">
+              <p class="episodes-textitle">Season: <span class="episodes-span">${seasonNumber}</span></p>
+              <p class="episodes-textitle">Air date: <span class="episodes-span">${ep.air_date}</span></p>
+            </div>
           </div>
+        </div>
       `;
     })
     .join('');
@@ -55,3 +56,23 @@ loadMoreBtn.addEventListener('click', () => {
 
 loadEpisodes();
 
+(() => {
+  const refs = {
+    closeModalBtn: document.querySelector('[data-modal-close]'),
+    modal: document.querySelector('[data-modal]'),
+  };
+
+  document.querySelector('.episodes-data').addEventListener('click', e => {
+    const card = e.target.closest('[data-modal-open]');
+    if (card) {
+      toggleModal();
+    }
+  });
+
+  refs.closeModalBtn.addEventListener('click', toggleModal);
+
+  function toggleModal() {
+    refs.modal.classList.toggle('is-hidden');
+    document.body.classList.toggle('no-scroll');
+  }
+})();
