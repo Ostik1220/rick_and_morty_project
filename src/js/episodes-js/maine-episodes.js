@@ -1,29 +1,12 @@
 const episodesContainer = document.querySelector('.episodes-data');
 const loadMoreBtn = document.querySelector('.episodes-button');
+const nameInput = document.querySelector('.episodes-search-input[type="text"]');
+const episodeSelect = document.getElementById('episodeSelect');
 
 let currentPage = 1;
-let totalPages = 1;
-
-function getTotalPagesPerChunk(data) {
-  return data.results.length;
-}
-
-async function loadEpisodes(page = 1) {
-  try {
-    const response = await fetch(
-      `https://rickandmortyapi.com/api/episode?page=${page}`
-    );
-    const data = await response.json();
-    const episodesPerPage = getTotalPagesPerChunk(data);
-    totalPages = Math.ceil(51 / episodesPerPage);
-    renderEpisodes(data.results);
-    if (currentPage >= totalPages) {
-      loadMoreBtn.style.display = 'none';
-    }
-  } catch (error) {
-    console.error('Помилка завантаження епізодів');
-  }
-}
+let allEpisodes = [];
+let displayedEpisodes = [];
+const perPage = 8;
 
 const seasonBackgrounds = {
   1: "../../img/season-1.png",
@@ -34,51 +17,142 @@ const seasonBackgrounds = {
   6: "../../img/season-6.png",
 };
 
+// --- 1. Завантаження всіх епізодів ---
+async function fetchAllEpisodes() {
+  try {
+    let results = [];
 
+    const firstRes = await fetch(`https://rickandmortyapi.com/api/episode?page=1`);
+    const firstData = await firstRes.json();
 
-function renderEpisodes(episodes) {
-  const markup = episodes
-    .map(ep => {
-      const seasonNumber = parseInt(ep.episode.slice(1, 3), 10);
-      const episodeNumber = parseInt(ep.episode.slice(4, 6), 10);
-      const bacroundSeason = seasonBackgrounds[seasonNumber];
+    firstData.results.forEach(ep => results.push(ep));
 
-      return `
-        <div data-modal-open 
-             class="episode-card" 
-             style="background-image: url(${bacroundSeason});">
-          <div class="episode-minicontainer">
-            <h3 class="episodes-cardtitle">${ep.name}</h3>
-            <div class="episodes-cardcontainer">
-              <p class="episodes-textitle">Season: 
-                <span class="episodes-span">${seasonNumber}</span>
-              </p>
-              <p class="episodes-textitle">Episode: 
-                <span class="episodes-span">${episodeNumber}</span>
-              </p>
-              <p class="episodes-textitle">Air date: 
-                <span class="episodes-span">${ep.air_date}</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      `;
-    })
-    .join("");
+    const totalPages = firstData.info.pages;
 
-  episodesContainer.innerHTML += markup;
+    for (let page = 2; page <= totalPages; page++) {
+      const res = await fetch(`https://rickandmortyapi.com/api/episode?page=${page}`);
+      const data = await res.json();
+      data.results.forEach(ep => results.push(ep));
+    }
+
+    allEpisodes = results;
+    generateSelectOptions(allEpisodes);
+    renderEpisodes();
+  } catch (error) {
+    console.error("Помилка завантаження епізодів:");
+  }
 }
 
+function generateSelectOptions(episodes) {
+  const grouped = episodes.reduce((acc, ep) => {
+    const season = `Season ${ep.episode.slice(1, 3)}`;
+    const episodeNum = ep.episode.slice(4, 6);
 
-loadMoreBtn.addEventListener('click', () => {
-  if (currentPage < totalPages) {
-    currentPage++;
-    loadEpisodes(currentPage);
+    acc[season] = (acc[season] || []).concat({ id: ep.id, name: `Episode ${episodeNum}` });
+
+    return acc;
+  }, {});
+
+  episodeSelect.innerHTML = `<option value="">All episodes</option>`;
+
+  for (const season in grouped) {
+    const seasonOption = document.createElement("option");
+    seasonOption.value = season;
+    seasonOption.textContent = `${season} (all)`;
+    episodeSelect.appendChild(seasonOption);
+
+    const optGroup = document.createElement("optgroup");
+    optGroup.label = season;
+    grouped[season].forEach(ep => {
+      const option = document.createElement("option");
+      option.value = ep.id;
+      option.textContent = ep.name;
+      optGroup.appendChild(option);
+    });
+    episodeSelect.appendChild(optGroup);
   }
+}
+
+function filterEpisodes() {
+  const nameValue = nameInput.value.toLowerCase();
+  const selected = episodeSelect.value;
+
+  return allEpisodes.filter(ep => {
+    const matchName = ep.name.toLowerCase().includes(nameValue);
+
+    let matchSelect = true;
+    if (selected) {
+      if (selected.startsWith("Season")) {
+        const seasonNum = selected.split(" ")[1];
+        matchSelect = ep.episode.startsWith("S" + seasonNum.padStart(2, "0"));
+      } else {
+        matchSelect = ep.id == selected;
+      }
+    }
+
+    return matchName && matchSelect;
+  });
+}
+
+function renderEpisodes(reset = true) {
+  if (reset) {
+    episodesContainer.innerHTML = "";
+    displayedEpisodes = [];
+    currentPage = 1;
+  }
+
+  const filtered = filterEpisodes();
+  const start = (currentPage - 1) * perPage;
+  const end = currentPage * perPage;
+  const toDisplay = filtered.slice(start, end);
+
+  displayedEpisodes = displayedEpisodes.concat(toDisplay);
+
+  const markup = toDisplay.map(ep => {
+    const seasonNumber = parseInt(ep.episode.slice(1, 3), 10);
+    const episodeNumber = parseInt(ep.episode.slice(4, 6), 10);
+    const backgroundSeason = seasonBackgrounds[seasonNumber];
+
+    return `
+      <div data-modal-open 
+           class="episode-card" 
+           style="background-image: url(${backgroundSeason});">
+        <div class="episode-minicontainer">
+          <h3 class="episodes-cardtitle">${ep.name}</h3>
+          <div class="episodes-cardcontainer">
+            <p class="episodes-textitle">Season: 
+              <span class="episodes-span">${seasonNumber}</span>
+            </p>
+            <p class="episodes-textitle">Episode: 
+              <span class="episodes-span">${episodeNumber}</span>
+            </p>
+            <p class="episodes-textitle">Air date: 
+              <span class="episodes-span">${ep.air_date}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  episodesContainer.innerHTML += markup;
+
+  if (displayedEpisodes.length >= filtered.length) {
+    loadMoreBtn.style.display = "none";
+  } else {
+    loadMoreBtn.style.display = "block";
+  }
+}
+
+// --- 5. Обробники ---
+nameInput.addEventListener("input", () => renderEpisodes());
+episodeSelect.addEventListener("change", () => renderEpisodes());
+loadMoreBtn.addEventListener("click", () => {
+  currentPage++;
+  renderEpisodes(false);
 });
 
-loadEpisodes();
-
+// --- 6. Модалка ---
 (() => {
   const refs = {
     closeModalBtn: document.querySelector('[data-modal-close]'),
@@ -100,4 +174,5 @@ loadEpisodes();
   }
 })();
 
-
+// --- Запуск ---
+fetchAllEpisodes();
