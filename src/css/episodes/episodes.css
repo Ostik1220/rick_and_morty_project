@@ -427,12 +427,10 @@ top: 17px;
 }
 
 .episode-card {
-  background-image: url(../../img/card-bacround.jpg);
   width: 336px;
   height: 250px;
   flex-shrink: 0;
   border-radius: 12px;
-  display: flex;
   flex-direction: column;
   justify-content: flex-end;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
