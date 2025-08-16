@@ -29,8 +29,8 @@ document.addEventListener('click', async e => {
     const epRes = await fetch(url);
     const epData = await epRes.json();
 
-    const season = epData.episode.slice(1, 3); // S01E05 -> 01
-    const episode = epData.episode.slice(4);   // E05 -> 05
+    const season = epData.episode.slice(1, 3); 
+    const episode = epData.episode.slice(4);  
 
     modalEpisodesList.innerHTML += `
       <li class="modal-episodes-item">
