@@ -1,6 +1,6 @@
 const episodesContainer = document.querySelector('.episodes-data');
 const loadMoreBtn = document.querySelector('.episodes-button');
-const nameInput = document.querySelector('.episodes-search-input[type="text"]');
+const nameInput = document.querySelector('.episodes-search-input');
 const episodeSelect = document.getElementById('episodeSelect');
 
 let currentPage = 1;
@@ -147,6 +147,7 @@ function renderEpisodes(reset = true) {
 }
 
 nameInput.addEventListener("input", () => renderEpisodes());
+console.log(nameInput)
 episodeSelect.addEventListener("change", () => renderEpisodes());
 loadMoreBtn.addEventListener("click", () => {
   currentPage++;
