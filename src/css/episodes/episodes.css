@@ -430,7 +430,8 @@ top: 17px;
 }
 
 .episode-card {
-  background-color: rgb(0, 0, 0);
+  background-image: url(../../img/season-1.png);
+  background-color: black;
   display: flex;
   width: 336px;
   height: 250px;
@@ -444,6 +445,22 @@ top: 17px;
     width: 284px;
     height: 200px;
   }
+}
+
+.episodes-1 {
+  background-image: url(../../img/season-1.png);
+}
+.episodes-2 {
+  background-image: url(../../img/season-2.png);
+}
+.episodes-3 {
+  background-image: url(../../img/season-3.png);
+}
+.episodes-4 {
+  background-image: url(../../img/season-4.png);
+}
+.episodes-5 {
+  background-image: url(../../img/season-5.png);
 }
 
 .episode-minicontainer {
