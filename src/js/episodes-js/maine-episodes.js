@@ -112,10 +112,10 @@ function renderEpisodes(reset = true) {
     const episodeNumber = parseInt(ep.episode.slice(4, 6), 10);
     const backgroundSeason = seasonBackgrounds[seasonNumber];
 
+
     return `
       <div data-modal-open 
-           class="episode-card" 
-           style="background-image: url(${backgroundSeason});"
+           class="episode-card episodes-${seasonNumber}" 
            data-ep-name="${ep.name}"
            data-ep-id="${ep.id}"
            data-ep-air="${ep.air_date}">
