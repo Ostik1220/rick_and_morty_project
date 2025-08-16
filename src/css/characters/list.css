@@ -1,0 +1,23 @@
+.character-image {
+border: 2px solid #A1D737;
+border-radius: 18px;
+width: 278px;
+}
+.character-list {
+    display: flex;
+    gap: 16px;
+    width: 1184px;
+}
+.character-text2 {
+    color: gray;
+    padding-top: 8px;
+}
+.character-text1 {
+    color: gray;
+}
+.character-location {
+    color: black;
+}
+.character-origin {
+    color: black;
+}
