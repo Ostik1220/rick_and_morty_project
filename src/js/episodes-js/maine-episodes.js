@@ -17,7 +17,6 @@ const seasonBackgrounds = {
   6: "../../img/season-6.png",
 };
 
-// --- 1. Завантаження всіх епізодів ---
 async function fetchAllEpisodes() {
   try {
     let results = [];
@@ -116,7 +115,10 @@ function renderEpisodes(reset = true) {
     return `
       <div data-modal-open 
            class="episode-card" 
-           style="background-image: url(${backgroundSeason});">
+           style="background-image: url(${backgroundSeason});"
+           data-ep-name="${ep.name}"
+           data-ep-id="${ep.id}"
+           data-ep-air="${ep.air_date}">
         <div class="episode-minicontainer">
           <h3 class="episodes-cardtitle">${ep.name}</h3>
           <div class="episodes-cardcontainer">
@@ -144,7 +146,6 @@ function renderEpisodes(reset = true) {
   }
 }
 
-// --- 5. Обробники ---
 nameInput.addEventListener("input", () => renderEpisodes());
 episodeSelect.addEventListener("change", () => renderEpisodes());
 loadMoreBtn.addEventListener("click", () => {
@@ -152,7 +153,6 @@ loadMoreBtn.addEventListener("click", () => {
   renderEpisodes(false);
 });
 
-// --- 6. Модалка ---
 (() => {
   const refs = {
     closeModalBtn: document.querySelector('[data-modal-close]'),
@@ -174,5 +174,26 @@ loadMoreBtn.addEventListener("click", () => {
   }
 })();
 
-// --- Запуск ---
+document.querySelector('.episodes-data').addEventListener('click', e => {
+  const card = e.target.closest('[data-modal-open]');
+
+  if (card) {
+    const epName = card.getAttribute('data-ep-name');
+    const epId = card.getAttribute('data-ep-id');
+    const epAir = card.getAttribute('data-ep-air');
+
+    document.querySelector('.popup-title').textContent = epName;
+    document.querySelector('.popup-id').textContent = epId;
+    document.querySelector('.popup-air').textContent = epAir;
+
+    document.querySelector('[data-modal]').classList.remove('is-hidden');
+    document.body.classList.add('no-scroll');
+  }
+});
+
+document.querySelector('[data-modal-close]').addEventListener('click', () => {
+  document.querySelector('[data-modal]').classList.add('is-hidden');
+  document.body.classList.remove('no-scroll');
+});
+
 fetchAllEpisodes();
