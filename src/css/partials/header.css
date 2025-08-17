@@ -190,7 +190,7 @@ flex-shrink: 0;
   justify-content: center;
 }
 
-.header__label {
+.header__form {
   margin-left: auto;
   position: relative;
   display: flex;
@@ -224,7 +224,7 @@ flex-shrink: 0;
 .scroll-down-svg {
   width: 36x;
   height: 36px;
-  fill: #8c8c8c;
+ stroke: #FAFAFA;
 }
 
 .scroll-down:hover {
@@ -232,7 +232,7 @@ flex-shrink: 0;
     transition-duration: 250ms;
 }
 
-.scroll-down:hover .scroll-down-svg {
-  fill: #a1d737;
+.scroll-down:hover svg {
+  stroke: #a1d737;
     transition-duration: 250ms;
 }

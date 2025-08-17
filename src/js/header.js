@@ -11,8 +11,19 @@ close.addEventListener('click', () => {
   searchBox.style.visibility = 'hidden';
   close.style.display = 'none';
 });
-
 const isEpisodesPage = window.location.pathname.includes('episodes.html');
+const isMainPage = window.location.pathname.includes('characters.html');
+if (isMainPage === true || isEpisodesPage === true) {
+document.querySelector('.header__btns').style.display = 'none';
+document.querySelector('.header__logo').style.visibility = 'block';
+} else {
+  document.querySelector('.header__btns').style.display = 'flex';
+  document.querySelector('.header__logo').style.visibility = 'hidden';
+}
+
+console.log(isMainPage);
+
+
 headerForm.addEventListener('submit', async e => {
   e.preventDefault();
   const errorItems = `    <img src="./img/error-photo.png" alt="" >
