@@ -1,6 +1,6 @@
 .footer{
     padding-top: 69px;
-
+  transition-duration: 250ms;
 }
 
 .footer__container{
@@ -37,6 +37,12 @@ font-style: normal;
 font-weight: 400;
 line-height: 18px; 
 letter-spacing: 0.16px;
+  transition-duration: 250ms;
+}
+
+.footer__page:hover{
+    color: #a1d737;
+      transition-duration: 250ms;
 }
 
 .footer__social-list{
@@ -52,6 +58,18 @@ border: 1px solid #11111126;
 display: flex;
 justify-content: center;
 align-items: center;
+cursor: pointer;
+  transition-duration: 250ms;
+}
+
+.footer__social:hover{
+    border-color: #a1d737;
+      transition-duration: 250ms;
+}
+
+.footer__social:hover svg{
+    fill: #a1d737;
+      transition-duration: 250ms;
 }
 
 .footer__social-logo{
@@ -82,11 +100,26 @@ background: #0D171D;
 
 #night-page{
     color: #FAFAFA;
+      transition-duration: 250ms;
+}
+
+#night-page:hover{
+    color: #a1d737;
+      transition-duration: 250ms;
 }
 
 #night-social{
     border-color: #FAFAFA26;
 }
+#night-social:hover{
+    border-color: #a1d737;
+      transition-duration: 250ms;
+}
+#night-social:hover svg{
+    fill: #a1d737;
+      transition-duration: 250ms;
+}
+
 #night-social-picture{
    fill:#FAFAFA ;
 }
