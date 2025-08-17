@@ -23,18 +23,18 @@ document.querySelector('.header__logo').style.visibility = 'block';
 
 console.log(isMainPage);
 
-
+console.log(headerForm)
 headerForm.addEventListener('submit', async e => {
   e.preventDefault();
   const errorItems = `    <img src="./img/error-photo.png" alt="" >
     <p >Oops! Try looking for something else...  </p>`;
-  searchBox.style.display = 'block';
-  searchBox.style.visibility = 'visible';
-  errorPhoto.style.display = 'none';
-  errorPhoto.style.visibility = 'hidden';
-  errorText.style.display = 'none';
-  errorText.style.visibility = 'hidden';
-  close.style.display = 'block';
+  // searchBox.style.display = 'block';
+  // searchBox.style.visibility = 'visible';
+  // errorPhoto.style.display = 'none';
+  // errorPhoto.style.visibility = 'hidden';
+  // errorText.style.display = 'none';
+  // errorText.style.visibility = 'hidden';
+  // close.style.display = 'block';
   const searchValue = document
     .querySelector('.header__search')
     .value.trim()
