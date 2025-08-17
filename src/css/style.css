@@ -1,0 +1,7 @@
+@import'./default/common.css';
+@import'./default/reset.css';
+@import './partials/header.css';
+@import './home/home.css';
+@import './characters/characters.css';
+@import './episodes/episodes.css';
+@import './partials/footer.css';
