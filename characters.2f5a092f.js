@@ -1,0 +1,2 @@
+var r=globalThis,e={},t={},i=r.parcelRequire1001;null==i&&((i=function(r){if(r in e)return e[r].exports;if(r in t){var i=t[r];delete t[r];var n={id:r,exports:{}};return e[r]=n,i.call(n.exports,n,n.exports),n.exports}var o=Error("Cannot find module '"+r+"'");throw o.code="MODULE_NOT_FOUND",o}).register=function(r,e){t[r]=e},r.parcelRequire1001=i),i.register,i("3j7nR"),i("70IEE");
+//# sourceMappingURL=characters.2f5a092f.js.map
