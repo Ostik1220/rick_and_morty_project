@@ -124,11 +124,11 @@ headerForm.addEventListener('submit', async e => {
   document.querySelector('.header__search').value = '';
 });
 
-// const scrollButton = document.querySelector('.scroll-down');
+const scrollButton = document.querySelector('.scroll-down');
 
-// scrollButton.addEventListener('click', () => {
-//   window.scrollTo({
-//     top: document.body.scrollHeight,
-//     behavior: 'smooth',
-//   });
-// });
+scrollButton.addEventListener('click', () => {
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: 'smooth',
+  });
+});
