@@ -1,11 +1,11 @@
-import { getCharacterList, getEpisodesList } from './api-requests/getListsApi';
+import { getCharacterList, getEpisodesList } from './api-requests/getListsApi.js';
 
 const headerForm = document.querySelector('.header__form');
 const searchBox = document.querySelector('.header__search-box');
-const errorPhoto = document.querySelector('.header__error-photo');
+const errorPhoto = document.querySelector('#error-photo');
 const errorText = document.querySelector('.header__error-text');
 const close = document.querySelector('.header__close-icon');
-
+console.log(errorPhoto)
 close.addEventListener('click', () => {
   searchBox.style.display = 'none';
   searchBox.style.visibility = 'hidden';
@@ -23,19 +23,19 @@ document.querySelector('.header__logo').style.display = 'block';
     document.querySelector('.header__logo').style.display = 'none';
 }
 
-console.log(isMainPage);
-
 console.log(headerForm)
 headerForm.addEventListener('submit', async e => {
   e.preventDefault();
-  const errorItems = `    <img src="./img/error-photo.png" alt="" >
+  const errorItems = `    <img src="./img/season-1.png" alt="rick and morty error photo" class="header__error-photo">
     <p >Oops! Try looking for something else...  </p>`;
   searchBox.style.display = 'block';
   searchBox.style.visibility = 'visible';
-  errorPhoto.style.display = 'none';
-  errorPhoto.style.visibility = 'hidden';
+
+  errorPhoto.classList.add('header__error-img');
+
   errorText.style.display = 'none';
   errorText.style.visibility = 'hidden';
+
   close.style.display = 'block';
   const searchValue = document
     .querySelector('.header__search')
@@ -104,8 +104,7 @@ headerForm.addEventListener('submit', async e => {
 
     if (filtered.length === 0) {
       searchBox.innerHTML = errorItems;
-      errorPhoto.style.display = 'block';
-      errorPhoto.style.visibility = 'visible';
+
       errorText.style.display = 'block';
       errorText.style.visibility = 'visible';
       console.log(searchBox.innerHTML);
@@ -120,8 +119,7 @@ headerForm.addEventListener('submit', async e => {
         .join('');
     }
   } catch (error) {
-    errorPhoto.style.display = 'block';
-    errorPhoto.style.visibility = 'visible';
+      errorPhoto.classList.add('header__error-photo');
     errorText.style.display = 'block';
     errorText.style.visibility = 'visible';
     searchBox.innerHTML = errorItems;
