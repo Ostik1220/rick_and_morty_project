@@ -151,6 +151,8 @@ display: none;
 .header__logo {
   height: 48px;
 flex-shrink: 0;
+display: none;
+visibility: hidden;
 }
 
 .header__search {
