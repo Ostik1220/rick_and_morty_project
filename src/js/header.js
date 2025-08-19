@@ -2,10 +2,8 @@ import { getCharacterList, getEpisodesList } from './api-requests/getListsApi.js
 
 const headerForm = document.querySelector('.header__form');
 const searchBox = document.querySelector('.header__search-box');
-const errorPhoto = document.querySelector('#error-photo');
 const errorText = document.querySelector('.header__error-text');
 const close = document.querySelector('.header__close-icon');
-console.log(errorPhoto)
 close.addEventListener('click', () => {
   searchBox.style.display = 'none';
   searchBox.style.visibility = 'hidden';
@@ -26,12 +24,11 @@ document.querySelector('.header__logo').style.display = 'block';
 console.log(headerForm)
 headerForm.addEventListener('submit', async e => {
   e.preventDefault();
-  const errorItems = `    <img src="./img/season-1.png" alt="rick and morty error photo" class="header__error-photo">
-    <p >Oops! Try looking for something else...  </p>`;
+  const errorItems = ` 
+    <p id="error-text">Oops! Try looking for something else...  </p>`;
   searchBox.style.display = 'block';
   searchBox.style.visibility = 'visible';
 
-  errorPhoto.classList.add('header__error-img');
 
   errorText.style.display = 'none';
   errorText.style.visibility = 'hidden';
@@ -119,7 +116,6 @@ headerForm.addEventListener('submit', async e => {
         .join('');
     }
   } catch (error) {
-      errorPhoto.classList.add('header__error-photo');
     errorText.style.display = 'block';
     errorText.style.visibility = 'visible';
     searchBox.innerHTML = errorItems;
@@ -136,5 +132,3 @@ headerForm.addEventListener('submit', async e => {
 //     behavior: 'smooth',
 //   });
 // });
-
-console.log('Header script loaded successfully.');
