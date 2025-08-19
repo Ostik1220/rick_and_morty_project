@@ -42,19 +42,14 @@ display: none;
   display: none;
 }
 
-.header__error-img{
-  display: none;
-  visibility: hidden;
-}
-
-.header__error-photo{
-  display: block;
-  visibility: visible;
-}
 
 .header__error-text{
   display: none;
   visibility: hidden;
+}
+
+#error-text{
+margin-top: 16px;
 }
 
 
