@@ -65,7 +65,7 @@ display: none;
   gap: 10px;
 }
 
-.header__link {
+.header__link-characters{
   color: #0d171d;
   font-family: Montserrat;
   font-size: 12px;
@@ -101,13 +101,13 @@ display: none;
   }
 }
 
-.header__link:hover {
+.header__link-characters:hover {
   background: #0d171d;
   color:#a1d737;
     transition-duration: 250ms;
 }
 
-.header__a {
+.header__link-episodes {
   display: flex;
   padding: 10px 20px;
   align-items: flex-start;
@@ -142,7 +142,7 @@ display: none;
   }
 }
 
-.header__a:hover {
+.header__link-episodes:hover {
   background: #fafafa;
   color: #0d171d;
     transition-duration: 250ms;
