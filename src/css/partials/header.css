@@ -45,7 +45,11 @@ display: none;
 .header__error-img{
   display: none;
   visibility: hidden;
-  width: 282px;
+}
+
+.header__error-photo{
+  display: block;
+  visibility: visible;
 }
 
 .header__error-text{
