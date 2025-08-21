@@ -225,7 +225,7 @@ visibility: hidden;
 .scroll-down-svg {
   width: 36x;
   height: 36px;
- stroke: #FAFAFA;
+ stroke: #8c8c8c;
 }
 
 .scroll-down:hover {
@@ -236,4 +236,8 @@ visibility: hidden;
 .scroll-down:hover svg {
   stroke: #a1d737;
     transition-duration: 250ms;
+}
+
+.character-header{
+  color: #a1d737;
 }

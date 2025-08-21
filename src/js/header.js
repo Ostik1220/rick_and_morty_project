@@ -88,8 +88,8 @@ headerForm.addEventListener('submit', async e => {
             const domItem = `
       <h2 class="charaer-namect">${item.name}</h2>
       <img class="character-image" src="${item.image}" alt="photo of character"/>
-      <p class="character-text1">Origin: <span class="character-origin">${item.origin.name}</span></p>
-      <p class="character-text2">Location: <span class="character-location">${item.location.name}</span></p>
+      <p class="character-text1">Origin: <span class="character-header">${item.origin.name}</span></p>
+      <p class="character-text2">Location: <span class="character-header">${item.location.name}</span></p>
   `;
 
             searchBox.innerHTML = domItem;
