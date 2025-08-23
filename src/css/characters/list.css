@@ -6,7 +6,6 @@ width: 278px;
 .character-list {
     display: flex;
     gap: 16px;
-    width: 1184px;
 }
 .character-text2 {
     color: gray;
